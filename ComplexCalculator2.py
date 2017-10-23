@@ -44,7 +44,7 @@ def rect_to_polar(x, y):
 
 
 
-# Polar to Rect conversion. Takes a polar format number( r, theta) and returns the x & y lengths
+# Polar to Rect conversion. 
 
 
 
