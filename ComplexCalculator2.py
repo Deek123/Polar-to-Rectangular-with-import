@@ -106,6 +106,40 @@ v_l = current * inductance
 
 v_c = current * capacitance
 
+# Phase angle calculations (tests for positive/negative phase
+
+if inductance > capacitance:
+
+    argument_send = impedance[1] / impedance[0]
+
+else:
+
+    if capacitance > inductance:
+
+        argument_send = impedance[0] / impedance[1]
+
+    else:
+
+        argument_send = 0
+
+
+
+phase_radians = math.atan(argument_send)
+
+phase_angle = phase_radians * 180/pi
+
+
+
+# Printing out the results
+
+if capacitance > inductance:
+
+    print('Your current will lead your voltage by %f degrees ' % phase_angle)
+
+if inductance > capacitance:
+
+    print('Your current will lag your voltage by %f degrees' % phase_angle)
+
 print('\nYour total impedance is: %.2f + %.2fj' % (impedance[0], impedance[1]))
 
 print('That means the magnitude of your impedance is: %.2f' % mag_impedance)
